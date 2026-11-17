@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="robots" content="noindex, nofollow">
+<title>コードレス掃除機4機種の比較</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --bg-page: #FBF8F3;
+    --bg-card: #FFFFFF;
+    --text-main: #2B2A28;
+    --text-sub: #57534E;
+    --border-base: #E9E2D8;
+
+    --c-pencil: #0284C7;
+    --c-pencil-bg: #F0F9FF;
+    --c-pencil-bd: #BAE6FD;
+
+    --c-v12: #7C3AED;
+    --c-v12-bg: #F5F3FF;
+    --c-v12-bd: #DDD6FE;
+
+    --c-bl3p: #059669;
+    --c-bl3p-bg: #ECFDF5;
+    --c-bl3p-bd: #A7F3D0;
+
+    --c-bl3j: #64748B;
+    --c-bl3j-bg: #F8FAFC;
+    --c-bl3j-bd: #CBD5E1;
+
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    padding: 16px 14px 32px;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #FFF3E0 0%, #FFE6CC 100%);
+    color: #3B2A1A;
+    border: 1px solid #F6D6AE;
+    border-radius: 16px;
+    padding: 20px 16px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 14px rgba(180, 120, 50, 0.12);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: #B45309;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-title {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.35;
+    margin-bottom: 14px;
+  }
+
+  .conclusion-box {
+    background-color: #FFFFFF;
+    color: var(--text-main);
+    border-radius: 12px;
+    padding: 14px;
+  }
+
+  .conclusion-label {
+    display: inline-block;
+    background-color: var(--c-pencil);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 9px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+
+  .conclusion-main {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.55;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #CBD5E1;
+  }
+
+  .highlight-pencil {
+    color: var(--c-pencil);
+    background: linear-gradient(transparent 62%, #E0F2FE 62%);
+  }
+
+  .conclusion-sub {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-main);
+  }
+
+  .sub-pill-v12 {
+    display: inline-block;
+    background-color: var(--c-v12-bg);
+    color: var(--c-v12);
+    border: 1px solid var(--c-v12-bd);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 5px;
+  }
+
+  .sub-pill-bl3p {
+    display: inline-block;
+    background-color: var(--c-bl3p-bg);
+    color: var(--c-bl3p);
+    border: 1px solid var(--c-bl3p-bd);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 5px;
+  }
+
+  .section {
+    margin-bottom: 22px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .section-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    background-color: #B45309;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.3;
+  }
+
+  .product-card {
+    background-color: var(--bg-card);
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: 1.5px solid var(--border-base);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  }
+
+  .product-card.card-base {
+    background-color: var(--c-bl3j-bg);
+    border-color: var(--c-bl3j-bd);
+  }
+
+  .product-card.card-pencil {
+    border-color: var(--c-pencil);
+    border-width: 2px;
+  }
+
+  .product-card.card-v12 {
+    border-color: var(--c-v12-bd);
+  }
+
+  .product-card.card-bl3p {
+    border-color: var(--c-bl3p-bd);
+  }
+
+  .card-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .role-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 6px;
+  }
+
+  .tag-base {
+    background-color: #E2E8F0;
+    color: #334155;
+  }
+
+  .tag-pencil {
+    background-color: var(--c-pencil);
+    color: #FFFFFF;
+  }
+
+  .tag-v12 {
+    background-color: var(--c-v12-bg);
+    color: var(--c-v12);
+    border: 1px solid var(--c-v12-bd);
+  }
+
+  .tag-bl3p {
+    background-color: var(--c-bl3p-bg);
+    color: var(--c-bl3p);
+    border: 1px solid var(--c-bl3p-bd);
+  }
+
+  .price-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 800;
+    color: #0F172A;
+    background-color: #F1F5F9;
+    padding: 2px 9px;
+    border-radius: 6px;
+  }
+
+  .product-name {
+    font-size: 17px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .spec-grid {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 8px 10px;
+    align-items: start;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+  }
+
+  .spec-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-sub);
+    background-color: #F1F5F9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 1px;
+  }
+
+  .spec-val-weight {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+
+  .spec-val-text {
+    font-size: 15px;
+    color: var(--text-main);
+    line-height: 1.55;
+  }
+
+
+  .diff-card {
+    background-color: var(--bg-card);
+    border-radius: 14px;
+    padding: 15px 14px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border-base);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  }
+
+  .diff-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #F1F5F9;
+  }
+
+  .weight-row {
+    margin-bottom: 12px;
+  }
+
+  .weight-row:last-of-type {
+    margin-bottom: 10px;
+  }
+
+  .weight-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .weight-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .weight-num {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0F172A;
+    flex-shrink: 0;
+  }
+
+  .bar-track {
+    width: 100%;
+    height: 12px;
+    background-color: #E2E8F0;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 4px;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 999px;
+  }
+
+  .bar-bl3p {
+    width: 50%;
+    background-color: var(--c-bl3p);
+  }
+
+  .bar-pencil {
+    width: 59.1%;
+    background-color: var(--c-pencil);
+  }
+
+  .bar-v12 {
+    width: 100%;
+    background-color: var(--c-v12);
+  }
+
+  .weight-desc {
+    font-size: 15px;
+    color: var(--text-sub);
+  }
+
+  .point-banner {
+    background-color: #F1F5F9;
+    border-left: 4px solid #334155;
+    padding: 10px 12px;
+    border-radius: 0 8px 8px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-top: 10px;
+  }
+
+  .compare-list {
+    list-style: none;
+  }
+
+  .compare-item {
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    border-left: 4px solid #CBD5E1;
+    background-color: #F8FAFC;
+  }
+
+  .compare-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .compare-item.item-pencil {
+    background-color: var(--c-pencil-bg);
+    border-left-color: var(--c-pencil);
+  }
+
+  .compare-item.item-v12 {
+    background-color: var(--c-v12-bg);
+    border-left-color: var(--c-v12);
+  }
+
+  .compare-item.item-bl3p {
+    background-color: var(--c-bl3p-bg);
+    border-left-color: var(--c-bl3p);
+  }
+
+  .compare-item-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 2px;
+  }
+
+  .compare-item-body {
+    font-size: 15px;
+    color: var(--text-main);
+    line-height: 1.55;
+  }
+
+  .guide-card {
+    background-color: var(--bg-card);
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: 1.5px solid var(--border-base);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  }
+
+  .guide-card.guide-pencil {
+    border-color: var(--c-pencil-bd);
+    border-top: 4px solid var(--c-pencil);
+  }
+
+  .guide-card.guide-v12 {
+    border-color: var(--c-v12-bd);
+    border-top: 4px solid var(--c-v12);
+  }
+
+  .guide-card.guide-bl3p {
+    border-color: var(--c-bl3p-bd);
+    border-top: 4px solid var(--c-bl3p);
+  }
+
+  .guide-head {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .guide-merit {
+    font-size: 15px;
+    color: var(--text-main);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .guide-caution {
+    background-color: #FFF7ED;
+    border: 1px solid #FED7AA;
+    border-radius: 8px;
+    padding: 9px 11px;
+    font-size: 15px;
+    color: #9A3412;
+    line-height: 1.55;
+  }
+
+  .caution-badge {
+    display: inline-block;
+    background-color: #EA580C;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 4px;
+    margin-right: 5px;
+    vertical-align: baseline;
+  }
+
+  .final-card {
+    background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+    border: 2px solid var(--c-pencil);
+    border-radius: 16px;
+    padding: 16px 15px;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12);
+  }
+
+  .final-badge {
+    display: inline-block;
+    background-color: var(--c-pencil);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+
+  .final-main {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .final-sub {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 11px 12px;
+    font-size: 15px;
+    color: var(--text-main);
+    line-height: 1.6;
+    border: 1px solid var(--c-pencil-bd);
+  }
+
+  .product-name a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: #CBD5E1;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
+  .guide-head a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
+  .link-btn {
+    display: block;
+    margin-top: 12px;
+    padding: 11px 12px;
+    min-height: 44px;
+    border-radius: 10px;
+    border: 1.5px solid;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .link-btn.lb-pencil { color: var(--c-pencil); background-color: var(--c-pencil-bg); border-color: var(--c-pencil-bd); }
+  .link-btn.lb-v12 { color: var(--c-v12); background-color: var(--c-v12-bg); border-color: var(--c-v12-bd); }
+  .link-btn.lb-bl3p { color: var(--c-bl3p); background-color: var(--c-bl3p-bg); border-color: var(--c-bl3p-bd); }
+
+  .diff-text {
+    font-size: 15px;
+    color: var(--text-sub);
+    line-height: 1.7;
+    margin-top: 10px;
+  }
+
+  .section-lead {
+    font-size: 15px;
+    color: var(--text-sub);
+    margin: -4px 0 12px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="hero">
+    <span class="hero-badge">掃除機えらびの手引き</span>
+    <h1 class="hero-title">コードレス掃除機<br>4機種の比べ方</h1>
+    <div class="conclusion-box">
+      <span class="conclusion-label">ひとことで言うと</span>
+      <p class="conclusion-main">
+        フローリング中心で毎日使う場合、軽さと掃除のしやすさのバランスで選ばれやすいのは<span class="highlight-pencil">Dyson PencilVac Fluffy</span>です。
+      </p>
+      <p class="conclusion-sub">
+        吸引力を重視する人には <span class="sub-pill-v12">Dyson V12</span>、軽さを最優先する人には <span class="sub-pill-bl3p">日立 PV-BL3P</span> が向いています。
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">1</span>
+      <h2 class="section-title">4機種のプロフィール</h2>
+    </div>
+    <p class="section-lead">価格は販売店での実売の目安です。</p>
+
+    <article class="product-card card-base">
+      <div class="card-top">
+        <span class="role-tag tag-base">いまお使いのもの</span>
+        <span class="price-tag">比べるときの基準</span>
+      </div>
+      <h3 class="product-name">日立 PV-BL3J</h3>
+      <div class="spec-grid">
+        <span class="spec-label">重さ</span>
+        <div class="spec-val-weight">1.1kg</div>
+        <span class="spec-label">吸引力</span>
+        <div class="spec-val-text">ほかの3機種と比べるときの基準です。</div>
+      </div>
+    </article>
+
+    <article class="product-card card-pencil">
+      <div class="card-top">
+        <span class="role-tag tag-pencil">軽さと掃除力の両立</span>
+        <span class="price-tag">実売 約3.7万円</span>
+      </div>
+      <h3 class="product-name"><a href="https://www.dyson.co.jp/vacuum-cleaners/powerbroom/pencilvac/fluffy" target="_blank" rel="noopener">Dyson PencilVac Fluffy</a></h3>
+      <div class="spec-grid">
+        <span class="spec-label">重さ</span>
+        <div class="spec-val-weight">1.3kg</div>
+        <span class="spec-label">吸引力</span>
+        <div class="spec-val-text">フローリングの細かなホコリから大きなゴミまで、しっかり掃除できます。</div>
+      </div>
+      <a class="link-btn lb-pencil" href="https://www.dyson.co.jp/vacuum-cleaners/powerbroom/pencilvac/fluffy" target="_blank" rel="noopener">ダイソン公式ページで見る ›</a>
+    </article>
+
+    <article class="product-card card-v12">
+      <div class="card-top">
+        <span class="role-tag tag-v12">吸引力重視</span>
+        <span class="price-tag">実売 約4.8万円</span>
+      </div>
+      <h3 class="product-name"><a href="https://www.dyson.co.jp/vacuum-cleaners/cordless/v12/detect-slim-fluffy-nickel-iron-nickel" target="_blank" rel="noopener">Dyson V12 Detect Slim Fluffy</a></h3>
+      <div class="spec-grid">
+        <span class="spec-label">重さ</span>
+        <div class="spec-val-weight">2.2kg</div>
+        <span class="spec-label">吸引力</span>
+        <div class="spec-val-text">強力な吸引力が特長です。ゴミの量に応じて、吸引力を自動で調整します。</div>
+      </div>
+      <a class="link-btn lb-v12" href="https://www.dyson.co.jp/vacuum-cleaners/cordless/v12/detect-slim-fluffy-nickel-iron-nickel" target="_blank" rel="noopener">ダイソン公式ページで見る ›</a>
+    </article>
+
+    <article class="product-card card-bl3p">
+      <div class="card-top">
+        <span class="role-tag tag-bl3p">軽さ重視</span>
+        <span class="price-tag">実売 約3.5万円</span>
+      </div>
+      <h3 class="product-name"><a href="https://kadenfan.hitachi.co.jp/clean/lineup/pv-bl3p/" target="_blank" rel="noopener">日立 PV-BL3P</a></h3>
+      <div class="spec-grid">
+        <span class="spec-label">重さ</span>
+        <div class="spec-val-weight">1.1kg</div>
+        <span class="spec-label">吸引力</span>
+        <div class="spec-val-text">ゴミの量に応じた吸引力の自動調整つきです。ただ、いまお使いのものから吸引力がどれだけ上がったかは、はっきりしていません。</div>
+      </div>
+      <a class="link-btn lb-bl3p" href="https://kadenfan.hitachi.co.jp/clean/lineup/pv-bl3p/" target="_blank" rel="noopener">日立公式ページで見る ›</a>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">2</span>
+      <h2 class="section-title">選ぶときに差がつく3つの点</h2>
+    </div>
+
+    <div class="diff-card">
+      <h3 class="diff-title">① 重さ・使いやすさ</h3>
+
+      <div class="weight-row">
+        <div class="weight-head">
+          <span class="weight-name">日立 PV-BL3P</span>
+          <span class="weight-num">1.1kg</span>
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill bar-bl3p"></div>
+        </div>
+        <p class="weight-desc">いまお使いのものと同じ軽さです。</p>
+      </div>
+
+      <div class="weight-row">
+        <div class="weight-head">
+          <span class="weight-name">Dyson PencilVac</span>
+          <span class="weight-num">1.3kg</span>
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill bar-pencil"></div>
+        </div>
+        <p class="weight-desc">いまお使いのものより200g重い程度です。</p>
+      </div>
+
+      <div class="weight-row">
+        <div class="weight-head">
+          <span class="weight-name">Dyson V12</span>
+          <span class="weight-num">2.2kg</span>
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill bar-v12"></div>
+        </div>
+        <p class="weight-desc">いまお使いのものの2倍の重さです。</p>
+      </div>
+
+      <div class="point-banner">
+        毎日20〜30分ほど使う場合、軽さはとても大切なポイントです。
+      </div>
+    </div>
+
+    <div class="diff-card">
+      <h3 class="diff-title">② 吸引力</h3>
+      <ul class="compare-list">
+        <li class="compare-item item-v12">
+          <div class="compare-item-title">Dyson V12</div>
+          <div class="compare-item-body">強い吸引力と、自動で調整する機能が魅力です。</div>
+        </li>
+        <li class="compare-item item-pencil">
+          <div class="compare-item-title">Dyson PencilVac</div>
+          <div class="compare-item-body">軽いのに、フローリングの掃除力が高いのが特長です。</div>
+        </li>
+        <li class="compare-item item-bl3p">
+          <div class="compare-item-title">日立 PV-BL3P</div>
+          <div class="compare-item-body">軽くて、自動調整もできます。ただ、いまお使いのものからどれだけ良くなったかは、はっきりしていません。</div>
+        </li>
+      </ul>
+      <p class="diff-text">メーカーごとに、吸引力を同じ条件で比べられる数値がありません。そのため、強さの順位ははっきり決められません。</p>
+    </div>
+
+    <div class="diff-card">
+      <h3 class="diff-title">③ バッテリーの持ち</h3>
+      <ul class="compare-list">
+        <li class="compare-item item-pencil">
+          <div class="compare-item-title">Dyson PencilVac</div>
+          <div class="compare-item-body">最長30分です。実際に床を掃除するときは、これより短くなります。</div>
+        </li>
+        <li class="compare-item item-v12">
+          <div class="compare-item-title">Dyson V12</div>
+          <div class="compare-item-body">最長60分です。長めの掃除にも対応しやすいです。</div>
+        </li>
+        <li class="compare-item item-bl3p">
+          <div class="compare-item-title">日立 PV-BL3P</div>
+          <div class="compare-item-body">標準モードで約30分、自動モードで約8〜20分です。</div>
+        </li>
+      </ul>
+      <p class="diff-text">これらの時間は、メーカーごとに測る条件が違います。数字どおりの単純な比較はできません。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">3</span>
+      <h2 class="section-title">どんな人に向いているか</h2>
+    </div>
+
+    <article class="guide-card guide-pencil">
+      <h3 class="guide-head">バランス重視の人には<br>「<a href="https://www.dyson.co.jp/vacuum-cleaners/powerbroom/pencilvac/fluffy" target="_blank" rel="noopener">Dyson PencilVac Fluffy</a>」</h3>
+      <p class="guide-merit">軽さとフローリングの掃除力を両立していて、毎日の掃除に向いています。</p>
+      <div class="guide-caution">
+        <span class="caution-badge">注意点</span>30分近く続けて使う場合は、バッテリーの残りに気をつけたいところです。
+      </div>
+    </article>
+
+    <article class="guide-card guide-v12">
+      <h3 class="guide-head">吸引力を重視する人には<br>「<a href="https://www.dyson.co.jp/vacuum-cleaners/cordless/v12/detect-slim-fluffy-nickel-iron-nickel" target="_blank" rel="noopener">Dyson V12</a>」</h3>
+      <p class="guide-merit">強い吸引力、自動調整、運転時間の余裕が魅力です。</p>
+      <div class="guide-caution">
+        <span class="caution-badge">注意点</span>2.2kgの重さは、買う前に確かめておきたい点です。
+      </div>
+    </article>
+
+    <article class="guide-card guide-bl3p">
+      <h3 class="guide-head">軽さを最優先する人には<br>「<a href="https://kadenfan.hitachi.co.jp/clean/lineup/pv-bl3p/" target="_blank" rel="noopener">日立 PV-BL3P</a>」</h3>
+      <p class="guide-merit">いまお使いのものと同じ1.1kgで、使い慣れた操作感のまま使いやすいです。</p>
+      <div class="guide-caution">
+        <span class="caution-badge">注意点</span>吸引力が大きく良くなったかどうかは、はっきりしていません。
+      </div>
+    </article>
+  </section>
+
+  <section class="final-card">
+    <span class="final-badge">選ぶときの目安</span>
+    <p class="final-main">
+      フローリング中心で毎日20〜30分使う場合は、Dyson PencilVac Fluffy が候補に挙がりやすい機種です。
+    </p>
+    <p class="final-sub">
+      バッテリーの持ちが足りるかを確かめて、できれば店頭で実際に持って動かしてから決めると、安心です。
+    </p>
+  </section>
+
+</div>
+</body>
+</html>
